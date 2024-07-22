@@ -1,0 +1,755 @@
+                                   MODFLOW 6
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                          GROUNDWATER FLOW MODEL (GWF)
+                  VERSION 6.5.0.dev0 (preliminary) 01/29/2024
+                               ***DEVELOP MODE***
+
+   MODFLOW 6 compiled Jan 29 2024 03:01:13 with Intel(R) Fortran Intel(R) 64
+   Compiler Classic for applications running on Intel(R) 64, Version 2021.7.0
+                             Build 20220726_000000
+
+This software is preliminary or provisional and is subject to 
+revision. It is being provided to meet the need for timely best 
+science. The software has not received final approval by the U.S. 
+Geological Survey (USGS). No warranty, expressed or implied, is made 
+by the USGS or the U.S. Government as to the functionality of the 
+software and related material nor shall the fact of release 
+constitute any such warranty. The software is provided on the 
+condition that neither the USGS nor the U.S. Government shall be held 
+liable for any damages resulting from the authorized or unauthorized 
+use of the software.
+
+
+As a work of the United States Government, this USGS product is 
+in the public domain within the United States. You can copy, 
+modify, distribute, and perform the work, even for commercial 
+purposes, all without asking permission. Additionally, USGS 
+waives copyright and related rights in the work worldwide 
+through CC0 1.0 Universal Public Domain Dedication 
+(https://creativecommons.org/publicdomain/zero/1.0/).
+
+The following GNU Lesser General Public License (LGPL) libraries
+are used in this USGS product:
+
+    SPARSKIT version 2.0
+      ilut, luson, and qsplit 
+      (https://www-users.cse.umn.edu/~saad/software/SPARSKIT/)
+
+    RCM - Reverse Cuthill McKee Ordering
+      (https://people.math.sc.edu/Burkardt/f_src/rcm/rcm.html)
+
+    BLAS - Basic Linear Algebra Subprograms Level 1
+      (https://people.math.sc.edu/Burkardt/f_src/blas1_d/blas1_d.html)
+
+    SPARSEKIT - Sparse Matrix Utility Package
+      amux, dperm, dvperm, rperm, and cperm
+      (https://people.sc.fsu.edu/~jburkardt/f77_src/sparsekit/sparsekit.html)
+
+The following BSD-3 License libraries are used in this USGS product:
+
+    Modern Fortran DAG Library
+      Copyright (c) 2018, Jacob Williams
+      All rights reserved.
+      (https://github.com/jacobwilliams/daglib)
+
+MODFLOW 6 compiler options: /Isrc\libmf6core.a.p /Isrc /I..\src
+/Isrc\libmf6_external.a.p /MTd /nologo /warn:general /warn:truncated_source
+/stand:f08 /Zi /traceback /O2 /fpe:0 /heap-arrays:0 /traceback /fpp
+/Qdiag-disable:7416 /Qdiag-disable:7025 /Qdiag-disable:5268
+/Fdsrc\libmf6core.a.p\Utilities_compilerversion.F90.pdb
+/module:src\libmf6core.a.p
+/Fosrc/libmf6core.a.p/Utilities_compilerversion.F90.obj /c
+
+System command used to initiate simulation:
+"C:\Users\00098687\OneDrive - The University of Western Australia\loop_to_flopy\exe\mf6.exe"
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  SIZE IN BITS: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  SIZE IN BITS: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  SIZE IN BITS: 64
+
+Logical Variables
+  KIND: 4
+  SIZE IN BITS: 32
+ 
+ NAMEFILE OPTIONS:
+    NEWTON-RAPHSON method enabled for the model.
+    NEWTON-RAPHSON UNDER-RELAXATION based on the bottom elevation of the model will be applied to the model.
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END NAMEFILE OPTIONS:
+
+ DISU -- UNSTRUCTURED GRID DISCRETIZATION PACKAGE, VERSION 2 : 3/27/2014 - INPUT READ FROM MEMPATH: __INPUT__/RUN/DISU                                
+
+
+ Setting Discretization Options
+    VERTICAL_OFFSET_TOLERANCE = .000000000000000
+ End Setting Discretization Options
+
+ Setting Discretization Dimensions
+    NODES = 12087
+    NJA = 136659
+    NVERT = 2882
+ End Setting Discretization Dimensions
+
+ Setting Discretization Griddata
+    TOP set from input file
+    BOT set from input file
+    AREA set from input file
+ End Setting Discretization Griddata
+
+ Setting Discretization Connectivity
+    IAC set from input file
+    JA set from input file
+    IHC set from input file
+    CL12 set from input file
+    HWVA set from input file
+    ANGLDEGX set from input file
+ End Setting Discretization Connectivity
+
+ Discretization Vertex data loaded
+ Discretization Cell2d data loaded
+
+ NPF -- NODE PROPERTY FLOW PACKAGE, VERSION 1, 3/30/2015 INPUT READ FROM MEMPATH: __INPUT__/RUN/NPF                                 
+
+
+ IC -- Initial Conditions Package, Version 8, 3/28/2015 input read from mempath: __INPUT__/RUN/IC                                  
+
+
+ Setting NPF Options
+    XT3D formulation is selected.
+ End Setting NPF Options
+
+ Setting NPF Griddata
+    ICELLTYPE set from input file
+    K set from input file
+    K33 set from input file
+    K22 set from input file
+    ANGLE1 set from input file
+    ANGLE2 set from input file
+    ANGLE3 set from input file
+ End Setting NPF Griddata
+
+
+ WEL   -- WEL PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/RUN/WEL_0                               
+
+ PROCESSING WEL BASE OPTIONS
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+    LISTS OF WEL CELLS WILL BE PRINTED.
+    WEL FLOWS WILL BE PRINTED TO LISTING FILE.
+ END OF WEL BASE OPTIONS
+
+ PROCESSING WEL OPTIONS
+ END OF WEL OPTIONS
+
+ PROCESSING WEL BASE DIMENSIONS
+    MAXBOUND =      12
+ END OF WEL BASE DIMENSIONS
+
+ RCH   -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/RUN/RCH_0                               
+
+ PROCESSING RCH BASE OPTIONS
+ END OF RCH BASE OPTIONS
+
+ PROCESSING RCH OPTIONS
+ END OF RCH OPTIONS
+
+ PROCESSING RCH BASE DIMENSIONS
+    MAXBOUND =    1280
+ END OF RCH BASE DIMENSIONS
+
+ CHD   -- CHD PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/RUN/CHD_0                               
+
+ PROCESSING CHD BASE OPTIONS
+ END OF CHD BASE OPTIONS
+
+ PROCESSING CHD BASE DIMENSIONS
+    MAXBOUND =     615
+ END OF CHD BASE DIMENSIONS
+    STRT set from input file
+
+ XT3D is active.
+
+
+
+ STO -- STORAGE PACKAGE, VERSION 1, 5/19/2014 INPUT READ FROM UNIT 1005
+
+
+ # File generated by Flopy version 3.4.1 on 07/22/2024 at 09:17:48.
+ PROCESSING STORAGE OPTIONS
+ END OF STORAGE OPTIONS
+ PROCESSING GRIDDATA
+
+                 ICONVERT = 1
+ END PROCESSING GRIDDATA
+
+The observation utility is active for "RUN"
+ # File generated by Flopy version 3.4.1 on 07/22/2024 at 09:17:48.
+
+Processing observation options:
+
+The PRINT_INPUT option has been specified.
+
+
+ OBSERVATIONS READ FROM FILE "run"
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ NAME                                     TYPE                                       TIME         LOCATION DATA                              OUTPUT FILENAME                                                                 
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ OB1_-25.0                                CONTINUOUS  HEAD                           ALL TIMES    "  1579"                                   run_past.csv                                                                    
+ OB1_-162.0                               CONTINUOUS  HEAD                           ALL TIMES    "  4688"                                   run_past.csv                                                                    
+ OB1_-326.0                               CONTINUOUS  HEAD                           ALL TIMES    "  6042"                                   run_past.csv                                                                    
+ OB2_-25.0                                CONTINUOUS  HEAD                           ALL TIMES    "  1580"                                   run_past.csv                                                                    
+ OB2_-50.0                                CONTINUOUS  HEAD                           ALL TIMES    "  2860"                                   run_past.csv                                                                    
+ OB2_-101.0                               CONTINUOUS  HEAD                           ALL TIMES    "  8547"                                   run_past.csv                                                                    
+ OB3_-25.0                                CONTINUOUS  HEAD                           ALL TIMES    "  1581"                                   run_past.csv                                                                    
+ OB3_-60.0                                CONTINUOUS  HEAD                           ALL TIMES    "  8548"                                   run_past.csv                                                                    
+ OB3_-121.0                               CONTINUOUS  HEAD                           ALL TIMES    "  8548"                                   run_past.csv                                                                    
+ OB4_-25.0                                CONTINUOUS  HEAD                           ALL TIMES    "  1582"                                   run_past.csv                                                                    
+ OB4_-99.0                                CONTINUOUS  HEAD                           ALL TIMES    "  5358"                                   run_past.csv                                                                    
+ OB4_-199.0                               CONTINUOUS  HEAD                           ALL TIMES    "  7643"                                   run_past.csv                                                                    
+ OB5_-25.0                                CONTINUOUS  HEAD                           ALL TIMES    "  1583"                                   run_past.csv                                                                    
+ OB5_-50.0                                CONTINUOUS  HEAD                           ALL TIMES    "  2863"                                   run_past.csv                                                                    
+ OB5_-73.0                                CONTINUOUS  HEAD                           ALL TIMES    "  8550"                                   run_past.csv                                                                    
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    BINARY GRID INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1017
+      FILE NAME: run.disu.grb
+
+ OPENED run.disu.grb
+ FILE TYPE:DATA(BINARY)   UNIT 1017   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+      THE LAST TIME STEP WILL BE PRINTED
+      THE LAST TIME STEP WILL BE PRINTED
+ # File generated by Flopy version 3.4.1 on 07/22/2024 at 09:17:48.
+
+ PROCESSING OC OPTIONS
+
+    BUDGET INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1018
+      FILE NAME: run.bud
+
+ OPENED run.bud
+ FILE TYPE:DATA(BINARY)   UNIT 1018   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    HEAD INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1019
+      FILE NAME: run.hds
+
+ OPENED run.hds
+ FILE TYPE:DATA(BINARY)   UNIT 1019   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+ END OF OC OPTIONS
+
+start timestep kper="1" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 1
+      THE LAST TIME STEP WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 1
+
+
+ STRESS PERIOD 1 IS TRANSIENT
+
+ ------------------
+  WEL NO.    NODE  
+ ------------------
+     1       6038  
+     2       6838  
+     3       7638  
+     4       6039  
+     5       6839  
+     6       7639  
+     7       6040  
+     8       6840  
+     9       7640  
+     10      6041  
+     11      6841  
+     12      7641  
+ ------------------
+
+
+
+ SLN_1 INNER ITERATION SUMMARY
+ --------------------------------------------------------------------------------------------------------------------------------------
+      TOTAL      OUTER      INNER                                                            MAXIMUM                                   
+  ITERATION  ITERATION  ITERATION  MAXIMUM CHANGE      MAXIMUM CHANGE MODEL-(CELLID)        RESIDUAL    MAXIMUM RESIDUAL MODEL-(CELLID)
+ --------------------------------------------------------------------------------------------------------------------------------------
+          1          1          1      -3.0302852                       1_GWF-(7638)       57.441812                       1_GWF-(6038)
+          2          1          2      -1.5930790                       1_GWF-(6039)       68.914928                       1_GWF-(6246)
+          3          1          3     -0.51503072                       1_GWF-(6246)       37.858812                       1_GWF-(6274)
+          4          1          4      -2.7153011                       1_GWF-(6212)       18.006150                       1_GWF-(6270)
+          5          1          5      -1.0401214                       1_GWF-(6274)      -15.830743                       1_GWF-(6274)
+          6          1          6     -0.28550329                       1_GWF-(6247)       6.0849543                       1_GWF-(7117)
+          7          1          7     -0.22788133                       1_GWF-(6164)       3.5589054                       1_GWF-(6041)
+          8          1          8  1.92438239E-02                       1_GWF-(6211)       3.2391423                       1_GWF-(6843)
+          9          1          9     -0.15311456                       1_GWF-(6164)       1.6889217                       1_GWF-(7031)
+         10          1         10 -2.75562188E-02                       1_GWF-(6035)      0.68607630                       1_GWF-(6843)
+         11          1         11 -2.52174656E-02                       1_GWF-(6035)     -0.49134653                       1_GWF-(6246)
+         12          1         12  4.54156284E-03                       1_GWF-(6258)     -0.32145404                       1_GWF-(6270)
+         13          1         13 -1.51684865E-02                       1_GWF-(6035)  8.24085206E-02                       1_GWF-(6247)
+         14          1         14 -3.04878456E-03                       1_GWF-(6247)  5.90364804E-02                       1_GWF-(6274)
+         15          1         15  5.36791917E-04                       1_GWF-(6043) -4.07925541E-02                       1_GWF-(6274)
+         16          2          1 -2.13873325E-04                       1_GWF-(6258)  9.79063225E-03                       1_GWF-(6247)
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+end timestep
+
+
+start timestep kper="1" kstp="2" mode="normal"
+
+
+ SLN_1 INNER ITERATION SUMMARY
+ --------------------------------------------------------------------------------------------------------------------------------------
+      TOTAL      OUTER      INNER                                                            MAXIMUM                                   
+  ITERATION  ITERATION  ITERATION  MAXIMUM CHANGE      MAXIMUM CHANGE MODEL-(CELLID)        RESIDUAL    MAXIMUM RESIDUAL MODEL-(CELLID)
+ --------------------------------------------------------------------------------------------------------------------------------------
+          1          1          1      -1.8311111                       1_GWF-(8829)       31.212647                       1_GWF-(8003)
+          2          1          2      -1.3237438                       1_GWF-(4684)      -21.012541                       1_GWF-(8181)
+          3          1          3       1.2672234                       1_GWF-(4684)      -16.139224                       1_GWF-(7197)
+          4          1          4     -0.45608474                       1_GWF-(6237)       5.6519132                       1_GWF-(7641)
+          5          1          5     -0.21734856                       1_GWF-(4684)       3.7189631                       1_GWF-(6270)
+          6          1          6     -0.24466165                       1_GWF-(6270)       1.4192760                       1_GWF-(6041)
+          7          1          7 -8.10282062E-02                       1_GWF-(6216)      0.91296683                       1_GWF-(6041)
+          8          1          8      0.17846199                       1_GWF-(6000)      -6.8313781                       1_GWF-(7163)
+          9          1          9     -0.21531586                       1_GWF-(6000)      0.41655824                       1_GWF-(6274)
+         10          1         10 -1.47081393E-02                       1_GWF-(6041)      0.34371110                       1_GWF-(6270)
+         11          1         11 -3.27664799E-03                       1_GWF-(4585)  8.53054581E-02                       1_GWF-(6041)
+         12          1         12  6.04826576E-04                       1_GWF-(6002)  8.29646078E-02                       1_GWF-(6041)
+         13          2          1 -1.29387655E-03                       1_GWF-(4585)  6.47091687E-02                       1_GWF-(6041)
+         14          2          2 -3.15208923E-03                       1_GWF-(6002)  3.06530161E-02                       1_GWF-(6238)
+         15          2          3 -1.02974419E-03                       1_GWF-(6238)  1.43587512E-02                       1_GWF-(6258)
+         16          2          4 -2.14334299E-04                       1_GWF-(7063)  1.07129744E-02                       1_GWF-(6221)
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+end timestep
+
+
+start timestep kper="1" kstp="3" mode="normal"
+
+
+ SLN_1 INNER ITERATION SUMMARY
+ --------------------------------------------------------------------------------------------------------------------------------------
+      TOTAL      OUTER      INNER                                                            MAXIMUM                                   
+  ITERATION  ITERATION  ITERATION  MAXIMUM CHANGE      MAXIMUM CHANGE MODEL-(CELLID)        RESIDUAL    MAXIMUM RESIDUAL MODEL-(CELLID)
+ --------------------------------------------------------------------------------------------------------------------------------------
+          1          1          1      -1.0262807                       1_GWF-(8829)       13.817078                       1_GWF-(8003)
+          2          1          2     -0.99094441                       1_GWF-(8545)      -9.5620557                       1_GWF-(8181)
+          3          1          3      0.55261639                       1_GWF-(8545)       9.0870180                       1_GWF-(6038)
+          4          1          4     -0.34454237                       1_GWF-(6038)       4.4995423                       1_GWF-(6206)
+          5          1          5     -0.23003522                       1_GWF-(6137)       3.6525147                       1_GWF-(6274)
+          6          1          6     -0.18881560                       1_GWF-(6255)       2.5188801                       1_GWF-(7197)
+          7          1          7     -0.32315902                       1_GWF-(6274)       3.4205358                       1_GWF-(8181)
+          8          1          8      0.17291889                       1_GWF-(6246)       1.1250773                       1_GWF-(6246)
+          9          1          9 -3.56322441E-02                       1_GWF-(6255)      0.75713007                       1_GWF-(6247)
+         10          1         10 -2.29879556E-02                       1_GWF-(6274)      0.27016862                       1_GWF-(6041)
+         11          1         11 -2.12601435E-02                       1_GWF-(6003)  7.96156499E-02                       1_GWF-(6258)
+         12          1         12 -3.34231298E-03                       1_GWF-(4585)      0.12833466                       1_GWF-(6274)
+         13          1         13 -2.88993914E-03                       1_GWF-(6274)  4.35941588E-02                       1_GWF-(6216)
+         14          1         14 -3.74278304E-03                       1_GWF-(6002)  2.19535509E-02                       1_GWF-(6247)
+         15          1         15 -1.50647062E-03                       1_GWF-(4585)  1.60823128E-02                       1_GWF-(6216)
+         16          1         16  1.58156095E-03                       1_GWF-(4585) -1.18936230E-02                       1_GWF-(6216)
+         17          1         17 -6.13582211E-04                       1_GWF-(4585)  3.47981364E-03                       1_GWF-(6216)
+         18          2          1 -7.12882659E-04                        1_GWF-(907) -1.49632239E-02                       1_GWF-(6407)
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+end timestep
+
+
+start timestep kper="1" kstp="4" mode="normal"
+
+
+ SLN_1 INNER ITERATION SUMMARY
+ --------------------------------------------------------------------------------------------------------------------------------------
+      TOTAL      OUTER      INNER                                                            MAXIMUM                                   
+  ITERATION  ITERATION  ITERATION  MAXIMUM CHANGE      MAXIMUM CHANGE MODEL-(CELLID)        RESIDUAL    MAXIMUM RESIDUAL MODEL-(CELLID)
+ --------------------------------------------------------------------------------------------------------------------------------------
+          1          1          1     -0.71636811                      1_GWF-(10218)       7.9671211                       1_GWF-(8064)
+          2          1          2     -0.79911584                       1_GWF-(8545)       5.3721792                       1_GWF-(6305)
+          3          1          3      0.25398718                       1_GWF-(8545)       6.0084271                       1_GWF-(6038)
+          4          1          4      0.24082428                       1_GWF-(9825)       4.1288135                       1_GWF-(6038)
+          5          1          5     -0.16665802                       1_GWF-(5938)       2.7094787                       1_GWF-(6274)
+          6          1          6     -0.16090802                       1_GWF-(6237)       1.8800574                       1_GWF-(6274)
+          7          1          7 -4.73615645E-02                       1_GWF-(6274)       1.6635855                       1_GWF-(8181)
+          8          1          8 -7.74341110E-02                       1_GWF-(6270)      0.98201366                       1_GWF-(6041)
+          9          1          9 -6.68064945E-02                       1_GWF-(6148)      0.80883138                       1_GWF-(6002)
+         10          1         10 -3.26287244E-02                       1_GWF-(6274)      0.30149455                       1_GWF-(6041)
+         11          1         11 -2.87331428E-02                       1_GWF-(6216)      0.14344040                       1_GWF-(6041)
+         12          1         12 -1.48356145E-03                       1_GWF-(6247)      0.13822035                       1_GWF-(6216)
+         13          1         13 -9.42722712E-03                       1_GWF-(6216)  5.97337734E-02                       1_GWF-(6216)
+         14          1         14 -2.61843486E-03                       1_GWF-(6238)  2.67005487E-02                       1_GWF-(6843)
+         15          1         15 -6.27619224E-03                       1_GWF-(6150) -2.67312921E-02                       1_GWF-(6216)
+         16          1         16  3.54579936E-03                       1_GWF-(6003) -1.18501156E-02                       1_GWF-(6036)
+         17          1         17 -2.15091340E-04                       1_GWF-(6274) -5.51907435E-03                       1_GWF-(6247)
+         18          2          1 -8.12433617E-04                        1_GWF-(907) -1.49637898E-02                       1_GWF-(1966)
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+end timestep
+
+
+start timestep kper="1" kstp="5" mode="normal"
+
+
+ SLN_1 INNER ITERATION SUMMARY
+ --------------------------------------------------------------------------------------------------------------------------------------
+      TOTAL      OUTER      INNER                                                            MAXIMUM                                   
+  ITERATION  ITERATION  ITERATION  MAXIMUM CHANGE      MAXIMUM CHANGE MODEL-(CELLID)        RESIDUAL    MAXIMUM RESIDUAL MODEL-(CELLID)
+ --------------------------------------------------------------------------------------------------------------------------------------
+          1          1          1     -0.69485396                      1_GWF-(10218)       5.6335339                       1_GWF-(8064)
+          2          1          2     -0.68440349                       1_GWF-(9825)       4.0912505                       1_GWF-(7336)
+          3          1          3     -0.20215558                       1_GWF-(5867)       3.9756368                       1_GWF-(6038)
+          4          1          4      0.17442633                       1_GWF-(9825)       3.1554298                       1_GWF-(6038)
+          5          1          5      0.12771437                      1_GWF-(11105)       2.0535022                       1_GWF-(6206)
+          6          1          6     -0.19347659                       1_GWF-(6137)       1.5973474                       1_GWF-(6274)
+          7          1          7     -0.15739409                      1_GWF-(11105)       1.0546188                       1_GWF-(6001)
+          8          1          8 -3.90860970E-02                       1_GWF-(5959)      0.87270905                       1_GWF-(6041)
+          9          1          9 -4.44811666E-02                       1_GWF-(6041)      0.54387411                       1_GWF-(6274)
+         10          1         10 -3.09182840E-02                       1_GWF-(6274)      0.31174018                       1_GWF-(6216)
+         11          1         11 -2.70894035E-02                       1_GWF-(6270)      0.17030568                       1_GWF-(6041)
+         12          1         12      0.25181871                       1_GWF-(6216)       1.7265215                       1_GWF-(6041)
+         13          1         13     -0.26917151                       1_GWF-(6216)     -0.10239660                       1_GWF-(6274)
+         14          1         14 -3.00344700E-03                       1_GWF-(6216)  2.80565048E-02                       1_GWF-(6041)
+         15          1         15 -2.28154905E-03                       1_GWF-(6150)  1.19167634E-02                       1_GWF-(6216)
+         16          1         16 -3.45869712E-04                       1_GWF-(6247)  1.00478157E-02                       1_GWF-(6040)
+         17          2          1 -8.52151369E-04                        1_GWF-(907) -1.53134439E-02                       1_GWF-(1966)
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+end timestep
+
+
+start timestep kper="1" kstp="6" mode="normal"
+
+
+ SLN_1 INNER ITERATION SUMMARY
+ --------------------------------------------------------------------------------------------------------------------------------------
+      TOTAL      OUTER      INNER                                                            MAXIMUM                                   
+  ITERATION  ITERATION  ITERATION  MAXIMUM CHANGE      MAXIMUM CHANGE MODEL-(CELLID)        RESIDUAL    MAXIMUM RESIDUAL MODEL-(CELLID)
+ --------------------------------------------------------------------------------------------------------------------------------------
+          1          1          1     -0.65602421                      1_GWF-(10212)       4.5403205                       1_GWF-(7336)
+          2          1          2     -0.57559957                       1_GWF-(9825)       3.5455548                       1_GWF-(7336)
+          3          1          3     -0.22720762                      1_GWF-(11105)       2.5087833                       1_GWF-(6038)
+          4          1          4     -0.14447779                       1_GWF-(5867)       2.2258113                       1_GWF-(6038)
+          5          1          5      0.11465383                      1_GWF-(11105)       1.6177193                       1_GWF-(6206)
+          6          1          6     -0.12482937                       1_GWF-(6131)       1.3335080                       1_GWF-(6274)
+          7          1          7     -0.13267900                      1_GWF-(11105)      0.87500249                       1_GWF-(6001)
+          8          1          8 -3.69892499E-02                       1_GWF-(6270)      0.76889424                       1_GWF-(6041)
+          9          1          9  4.61553816E-02                      1_GWF-(11105)      0.50016844                       1_GWF-(6274)
+         10          1         10 -2.67869522E-02                       1_GWF-(6274)      0.30365548                       1_GWF-(6216)
+         11          1         11 -2.33942705E-02                       1_GWF-(6270)      0.19724773                       1_GWF-(6041)
+         12          1         12 -2.00349411E-02                       1_GWF-(6148)      0.10550173                       1_GWF-(6274)
+         13          1         13 -1.67366847E-03                       1_GWF-(6274)  9.84631439E-02                       1_GWF-(6258)
+         14          1         14 -7.94241262E-03                       1_GWF-(6216)  4.07512727E-02                       1_GWF-(7069)
+         15          1         15 -3.68503299E-03                       1_GWF-(6148)  1.69218556E-02                       1_GWF-(6238)
+         16          1         16 -3.43203765E-04                       1_GWF-(6238)  1.44496850E-02                       1_GWF-(6216)
+         17          2          1 -8.82075607E-04                        1_GWF-(907) -1.60680296E-02                       1_GWF-(2426)
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+end timestep
+
+
+start timestep kper="1" kstp="7" mode="normal"
+
+
+ SLN_1 INNER ITERATION SUMMARY
+ --------------------------------------------------------------------------------------------------------------------------------------
+      TOTAL      OUTER      INNER                                                            MAXIMUM                                   
+  ITERATION  ITERATION  ITERATION  MAXIMUM CHANGE      MAXIMUM CHANGE MODEL-(CELLID)        RESIDUAL    MAXIMUM RESIDUAL MODEL-(CELLID)
+ --------------------------------------------------------------------------------------------------------------------------------------
+          1          1          1     -0.67406021                      1_GWF-(11987)       3.5628005                       1_GWF-(7336)
+          2          1          2     -0.49811781                       1_GWF-(9825)       3.0788475                       1_GWF-(7286)
+          3          1          3     -0.22541256                      1_GWF-(11105)       1.9774837                       1_GWF-(7336)
+          4          1          4     -0.11556142                       1_GWF-(5867)       1.5798683                       1_GWF-(6038)
+          5          1          5     -0.10176797                       1_GWF-(5867)       1.2376390                       1_GWF-(6206)
+          6          1          6  9.54730006E-02                      1_GWF-(11105)       1.0344452                       1_GWF-(6216)
+          7          1          7 -3.47014234E-02                       1_GWF-(6274)      0.83217056                       1_GWF-(6038)
+          8          1          8 -3.85086287E-02                       1_GWF-(6214)      0.64709708                       1_GWF-(6041)
+          9          1          9 -5.11617380E-02                       1_GWF-(6223)      0.56930810                       1_GWF-(6270)
+         10          1         10 -2.52882113E-02                       1_GWF-(6274)      0.29648787                       1_GWF-(6040)
+         11          1         11 -1.74790459E-02                       1_GWF-(6270)      0.21842312                       1_GWF-(6041)
+         12          1         12 -1.65568657E-02                       1_GWF-(6213)      0.13289480                       1_GWF-(6041)
+         13          1         13  6.80513129E-02                       1_GWF-(6274)      0.52471316                       1_GWF-(6041)
+         14          1         14 -8.51592340E-02                       1_GWF-(6148)  9.52817270E-02                       1_GWF-(6274)
+         15          1         15 -4.34190302E-03                       1_GWF-(6274) -2.51010412E-02                       1_GWF-(6274)
+         16          1         16  5.04714204E-04                      1_GWF-(11105)  1.55007247E-02                       1_GWF-(6274)
+         17          2          1 -2.53392344E-02                       1_GWF-(1267)  7.34775332E-02                       1_GWF-(6592)
+         18          2          2 -8.40523910E-04                       1_GWF-(8243)  1.61534937E-02                       1_GWF-(7392)
+         19          3          1  1.34279467E-04                       1_GWF-(2187)  7.31165937E-03                       1_GWF-(6041)
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+end timestep
+
+
+start timestep kper="1" kstp="8" mode="normal"
+
+
+ SLN_1 INNER ITERATION SUMMARY
+ --------------------------------------------------------------------------------------------------------------------------------------
+      TOTAL      OUTER      INNER                                                            MAXIMUM                                   
+  ITERATION  ITERATION  ITERATION  MAXIMUM CHANGE      MAXIMUM CHANGE MODEL-(CELLID)        RESIDUAL    MAXIMUM RESIDUAL MODEL-(CELLID)
+ --------------------------------------------------------------------------------------------------------------------------------------
+          1          1          1     -0.68806319                      1_GWF-(11740)       3.3077262                       1_GWF-(1146)
+          2          1          2     -0.44411006                       1_GWF-(9825)       2.7213813                       1_GWF-(7286)
+          3          1          3     -0.20098448                      1_GWF-(11105)       1.7509763                       1_GWF-(7317)
+          4          1          4 -8.29543213E-02                       1_GWF-(5867)       1.1535520                       1_GWF-(7343)
+          5          1          5 -8.57839988E-02                       1_GWF-(5867)      0.95502803                       1_GWF-(6039)
+          6          1          6  7.33714497E-02                      1_GWF-(11105)      0.82858493                       1_GWF-(6206)
+          7          1          7 -1.03425410E-02                       1_GWF-(6274)      0.79243699                       1_GWF-(6038)
+          8          1          8 -5.03366869E-02                       1_GWF-(6206)      0.55235530                       1_GWF-(6040)
+          9          1          9 -3.42814994E-02                       1_GWF-(6214)      0.43539943                       1_GWF-(6002)
+         10          1         10 -2.88026779E-02                       1_GWF-(6246)      0.33382727                       1_GWF-(6041)
+         11          1         11 -1.67423835E-02                       1_GWF-(6270)      0.26654110                       1_GWF-(6041)
+         12          1         12 -1.62123974E-02                       1_GWF-(6270)      0.19065478                       1_GWF-(6041)
+         13          1         13  6.25570143E-03                       1_GWF-(6222)      0.22113559                       1_GWF-(6041)
+         14          1         14 -3.42496534E-02                       1_GWF-(6148)  4.23647130E-02                       1_GWF-(6002)
+         15          1         15 -6.53072838E-03                       1_GWF-(5997) -2.16866848E-02                       1_GWF-(6992)
+         16          1         16  8.79996022E-04                       1_GWF-(6035)  1.58742086E-02                       1_GWF-(6002)
+         17          2          1  9.37954394E-04                       1_GWF-(8948) -1.72747606E-02                       1_GWF-(6621)
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+end timestep
+
+
+start timestep kper="1" kstp="9" mode="normal"
+
+
+ SLN_1 INNER ITERATION SUMMARY
+ --------------------------------------------------------------------------------------------------------------------------------------
+      TOTAL      OUTER      INNER                                                            MAXIMUM                                   
+  ITERATION  ITERATION  ITERATION  MAXIMUM CHANGE      MAXIMUM CHANGE MODEL-(CELLID)        RESIDUAL    MAXIMUM RESIDUAL MODEL-(CELLID)
+ --------------------------------------------------------------------------------------------------------------------------------------
+          1          1          1     -0.66770796                      1_GWF-(12072)       3.4000257                       1_GWF-(6621)
+          2          1          2     -0.39836703                       1_GWF-(9825)       2.4529293                       1_GWF-(7286)
+          3          1          3     -0.17249512                      1_GWF-(11105)       1.6214687                       1_GWF-(7338)
+          4          1          4 -7.23346395E-02                      1_GWF-(11105)       1.1666066                       1_GWF-(7343)
+          5          1          5 -6.52132954E-02                       1_GWF-(5867)      0.75263456                       1_GWF-(6039)
+          6          1          6 -5.76362936E-02                       1_GWF-(5867)      0.69306544                       1_GWF-(6039)
+          7          1          7  7.75405989E-03                       1_GWF-(5868)      0.70915191                       1_GWF-(6039)
+          8          1          8 -8.63049328E-02                       1_GWF-(6214)      0.55351292                       1_GWF-(6041)
+          9          1          9  2.65804407E-02                       1_GWF-(6237)      0.48733812                       1_GWF-(6041)
+         10          1         10 -7.03108970E-02                       1_GWF-(6137)      0.26490826                       1_GWF-(6216)
+         11          1         11 -1.19859210E-02                       1_GWF-(6246)      0.17770083                       1_GWF-(6041)
+         12          1         12 -1.59120408E-02                       1_GWF-(6246)      0.21058077                       1_GWF-(6003)
+         13          1         13 -8.67797551E-03                       1_GWF-(6274)  8.62821322E-02                       1_GWF-(6040)
+         14          1         14 -6.45871257E-03                       1_GWF-(6216)  6.96221184E-02                       1_GWF-(6041)
+         15          1         15 -8.37555082E-03                       1_GWF-(6274)  3.69186803E-02                       1_GWF-(6216)
+         16          1         16  4.16352345E-04                       1_GWF-(7074)  3.06047113E-02                       1_GWF-(6274)
+         17          2          1  1.33760704E-03                       1_GWF-(8948)  2.37000225E-02                       1_GWF-(6041)
+         18          2          2 -4.21279402E-04                       1_GWF-(6238)  2.06456505E-02                       1_GWF-(6041)
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+end timestep
+
+
+start timestep kper="1" kstp="10" mode="normal"
+
+
+ SLN_1 INNER ITERATION SUMMARY
+ --------------------------------------------------------------------------------------------------------------------------------------
+      TOTAL      OUTER      INNER                                                            MAXIMUM                                   
+  ITERATION  ITERATION  ITERATION  MAXIMUM CHANGE      MAXIMUM CHANGE MODEL-(CELLID)        RESIDUAL    MAXIMUM RESIDUAL MODEL-(CELLID)
+ --------------------------------------------------------------------------------------------------------------------------------------
+          1          1          1     -0.61117780                      1_GWF-(12072)       3.5007257                       1_GWF-(6621)
+          2          1          2     -0.35231161                       1_GWF-(9825)       2.2700294                       1_GWF-(7286)
+          3          1          3     -0.14635977                      1_GWF-(11038)       1.3538416                       1_GWF-(7338)
+          4          1          4 -6.58545800E-02                      1_GWF-(11105)       1.0283823                       1_GWF-(7343)
+          5          1          5 -4.72989057E-02                       1_GWF-(5870)      0.66846898                       1_GWF-(7338)
+          6          1          6 -4.58620794E-02                       1_GWF-(5871)      0.58726832                       1_GWF-(6039)
+          7          1          7  2.29361760E-02                       1_GWF-(5868)      0.63794227                       1_GWF-(6039)
+          8          1          8 -8.41263386E-02                       1_GWF-(6186)      0.43083027                       1_GWF-(6001)
+          9          1          9 -4.22672896E-02                       1_GWF-(6136)      0.31350695                       1_GWF-(6003)
+         10          1         10  1.71223188E-02                      1_GWF-(11105)      0.20488566                       1_GWF-(6216)
+         11          1         11  8.35963689E-03                       1_GWF-(6237)      0.27606685                       1_GWF-(6216)
+         12          1         12 -3.53859478E-02                       1_GWF-(6214)      0.16331004                       1_GWF-(6003)
+         13          1         13 -6.86009866E-03                       1_GWF-(6270)  7.94311504E-02                       1_GWF-(6041)
+         14          1         14 -5.24796190E-03                       1_GWF-(6213)  6.59582975E-02                       1_GWF-(6041)
+         15          1         15 -4.76155732E-03                       1_GWF-(6188)  4.09824777E-02                       1_GWF-(6041)
+         16          1         16 -5.63272572E-03                       1_GWF-(6216)  1.49158977E-02                       1_GWF-(7069)
+         17          1         17  4.90875295E-04                      1_GWF-(11105) -2.52115034E-02                       1_GWF-(6036)
+         18          2          1  9.50425874E-03                       1_GWF-(2469)     -0.16382910                       1_GWF-(3749)
+         19          2          2  9.09800463E-04                       1_GWF-(8202) -2.43221271E-02                       1_GWF-(7392)
+         20          3          1  1.99583056E-03                       1_GWF-(2469) -3.89242302E-02                       1_GWF-(3749)
+         21          3          2  2.83478358E-04                       1_GWF-(8212)  1.04087342E-02                       1_GWF-(6041)
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+end timestep
+
+
+start timestep kper="1" kstp="11" mode="normal"
+
+
+ SLN_1 INNER ITERATION SUMMARY
+ --------------------------------------------------------------------------------------------------------------------------------------
+      TOTAL      OUTER      INNER                                                            MAXIMUM                                   
+  ITERATION  ITERATION  ITERATION  MAXIMUM CHANGE      MAXIMUM CHANGE MODEL-(CELLID)        RESIDUAL    MAXIMUM RESIDUAL MODEL-(CELLID)
+ --------------------------------------------------------------------------------------------------------------------------------------
+          1          1          1     -0.52685643                      1_GWF-(12072)       3.4834012                       1_GWF-(6621)
+          2          1          2     -0.30269571                       1_GWF-(9825)       2.1487651                       1_GWF-(7286)
+          3          1          3     -0.12169166                      1_GWF-(11038)       1.1284232                       1_GWF-(7338)
+          4          1          4 -5.38384550E-02                      1_GWF-(11105)      0.89749276                       1_GWF-(7343)
+          5          1          5 -3.50671513E-02                       1_GWF-(5872)      0.65023775                       1_GWF-(7338)
+          6          1          6 -3.66625932E-02                       1_GWF-(5872)      0.49884286                       1_GWF-(6039)
+          7          1          7 -2.27095325E-02                       1_GWF-(5871)      0.45546853                       1_GWF-(6039)
+          8          1          8 -4.26076814E-02                       1_GWF-(5868)      0.37172896                       1_GWF-(6211)
+          9          1          9 -3.50973622E-02                      1_GWF-(11105)      0.45746589                       1_GWF-(6003)
+         10          1         10 -2.72966755E-02                       1_GWF-(6131)      0.22854328                       1_GWF-(6216)
+         11          1         11 -2.78990967E-02                       1_GWF-(6206)      0.13324101                       1_GWF-(6041)
+         12          1         12  6.69546012E-03                      1_GWF-(11105)      0.16333205                       1_GWF-(6216)
+         13          1         13 -1.00493065E-02                       1_GWF-(6270)  8.53617435E-02                       1_GWF-(6216)
+         14          1         14 -4.87153508E-03                       1_GWF-(6270)  5.67931920E-02                       1_GWF-(6041)
+         15          1         15 -3.86165851E-03                       1_GWF-(6213)  4.77156475E-02                       1_GWF-(6041)
+         16          1         16 -3.60122475E-03                       1_GWF-(6274)  2.99115979E-02                       1_GWF-(6040)
+         17          1         17 -3.79347582E-02                       1_GWF-(6188)     -0.13591511                       1_GWF-(6040)
+         18          1         18  3.30749257E-02                       1_GWF-(6213)  1.72572452E-02                       1_GWF-(6037)
+         19          1         19 -8.68843561E-04                       1_GWF-(6270)  6.38458599E-03                       1_GWF-(6211)
+         20          2          1 -1.62626925E-02                       1_GWF-(1189)      0.14296926                       1_GWF-(3749)
+         21          2          2 -1.10326557E-03                       1_GWF-(6602) -2.82428439E-02                       1_GWF-(3766)
+         22          2          3  4.38816701E-04                       1_GWF-(5603) -3.59930977E-02                       1_GWF-(7374)
+         23          3          1  1.02259743E-03                       1_GWF-(1312) -9.02836980E-03                       1_GWF-(7345)
+         24          3          2  8.44911997E-05                       1_GWF-(6545) -3.10927964E-03                       1_GWF-(7345)
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+end timestep
+
+
+start timestep kper="1" kstp="12" mode="normal"
+
+
+ SLN_1 INNER ITERATION SUMMARY
+ --------------------------------------------------------------------------------------------------------------------------------------
+      TOTAL      OUTER      INNER                                                            MAXIMUM                                   
+  ITERATION  ITERATION  ITERATION  MAXIMUM CHANGE      MAXIMUM CHANGE MODEL-(CELLID)        RESIDUAL    MAXIMUM RESIDUAL MODEL-(CELLID)
+ --------------------------------------------------------------------------------------------------------------------------------------
+          1          1          1     -0.42894863                      1_GWF-(12072)       3.5465562                       1_GWF-(6621)
+          2          1          2     -0.25215627                       1_GWF-(9825)       2.0762191                       1_GWF-(7286)
+          3          1          3 -9.69737136E-02                      1_GWF-(11038)       1.0634545                       1_GWF-(7183)
+          4          1          4 -4.21524008E-02                      1_GWF-(11105)      0.78347775                       1_GWF-(7183)
+          5          1          5 -3.00977323E-02                       1_GWF-(3137)      0.60226382                       1_GWF-(7338)
+          6          1          6 -3.20278426E-02                       1_GWF-(5874)      0.43087062                       1_GWF-(6039)
+          7          1          7 -1.90405353E-02                       1_GWF-(5872)      0.39681928                       1_GWF-(6039)
+          8          1          8 -1.55448860E-02                       1_GWF-(5871)      0.35054373                       1_GWF-(6039)
+          9          1          9  7.56384198E-02                       1_GWF-(6138)      0.63530699                       1_GWF-(7338)
+         10          1         10     -0.12941391                       1_GWF-(6214)      0.20950621                       1_GWF-(6007)
+         11          1         11 -2.76193087E-02                       1_GWF-(6206)      0.14551655                       1_GWF-(6247)
+         12          1         12  1.62325384E-03                       1_GWF-(6270)      0.16469341                       1_GWF-(6216)
+         13          1         13 -2.08044262E-02                       1_GWF-(6138)  7.66672246E-02                       1_GWF-(6216)
+         14          1         14 -4.92599826E-03                       1_GWF-(6270)  4.64016428E-02                       1_GWF-(6040)
+         15          1         15 -3.34902212E-03                       1_GWF-(6213)  3.51624473E-02                       1_GWF-(6041)
+         16          1         16 -2.62974159E-03                       1_GWF-(6274)  2.52161530E-02                       1_GWF-(6040)
+         17          1         17  1.56788479E-03                       1_GWF-(6274)  2.99640430E-02                       1_GWF-(6040)
+         18          1         18 -5.40587379E-03                       1_GWF-(6216) -2.74320570E-02                       1_GWF-(6036)
+         19          1         19 -8.91486096E-04                       1_GWF-(6270)  6.57868644E-03                       1_GWF-(6211)
+         20          2          1 -1.41379871E-02                         1_GWF-(32) -7.67917299E-02                       1_GWF-(2396)
+         21          2          2  6.52669758E-04                       1_GWF-(3746) -1.61204763E-02                       1_GWF-(1581)
+         22          3          1  2.31095108E-03                       1_GWF-(2396) -1.85268404E-02                       1_GWF-(2396)
+         23          3          2  2.28049903E-04                       1_GWF-(1581) -5.56463281E-03                       1_GWF-(1581)
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ WEL PACKAGE (WEL_0) FLOW RATES   PERIOD      1   STEP       12
+ -----------------------------------------------
+   NUMBER   CELLID                    RATE      
+ -----------------------------------------------
+     1      (6038)               -666.66667     
+     2      (6838)               -666.66667     
+     3      (7638)               -666.66667     
+     4      (6039)               -666.66667     
+     5      (6839)               -666.66667     
+     6      (7639)               -666.66667     
+     7      (6040)               -666.66667     
+     8      (6840)               -666.66667     
+     9      (7640)               -666.66667     
+     10     (6041)               -666.66667     
+     11     (6841)               -666.66667     
+     12     (7641)               -666.66667     
+ -----------------------------------------------
+
+
+
+
+ HEAD WILL BE SAVED ON UNIT 1019 AT END OF TIME STEP   12, STRESS PERIOD    1
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP   12, STRESS PERIOD   1
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     1201565.4102                STO-SS =         559.4619     STORAGE                          
+              STO-SY =     2234775.2781                STO-SY =        3078.3065     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+                 RCH =    28799989.2000                   RCH =       39452.0400     RCH_0                            
+                 CHD =     2057604.4234                   CHD =        3203.8685     CHD_0                            
+
+            TOTAL IN =    34293934.3117              TOTAL IN =       46293.6770
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =          17.9948                STO-SS =           0.0000     STORAGE                          
+              STO-SY =         574.4523                STO-SY =           0.0000     STORAGE                          
+                 WEL =     5840000.0000                   WEL =        8000.0000     WEL_0                            
+                 RCH =           0.0000                   RCH =           0.0000     RCH_0                            
+                 CHD =    28452719.0193                   CHD =       38292.1344     CHD_0                            
+
+           TOTAL OUT =    34293311.4664             TOTAL OUT =       46292.1344
+
+            IN - OUT =         622.8453              IN - OUT =           1.5426
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP   12 IN STRESS PERIOD    1
+                          TIME STEP LENGTH =    137.036    
+                        STRESS PERIOD TIME =    730.000    
+                     TOTAL SIMULATION TIME =    730.000    
+
+end timestep
+
