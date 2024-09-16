@@ -1,0 +1,736 @@
+                                   MODFLOW 6
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                          GROUNDWATER FLOW MODEL (GWF)
+                  VERSION 6.5.0.dev0 (preliminary) 01/29/2024
+                               ***DEVELOP MODE***
+
+   MODFLOW 6 compiled Jan 29 2024 03:01:13 with Intel(R) Fortran Intel(R) 64
+   Compiler Classic for applications running on Intel(R) 64, Version 2021.7.0
+                             Build 20220726_000000
+
+This software is preliminary or provisional and is subject to 
+revision. It is being provided to meet the need for timely best 
+science. The software has not received final approval by the U.S. 
+Geological Survey (USGS). No warranty, expressed or implied, is made 
+by the USGS or the U.S. Government as to the functionality of the 
+software and related material nor shall the fact of release 
+constitute any such warranty. The software is provided on the 
+condition that neither the USGS nor the U.S. Government shall be held 
+liable for any damages resulting from the authorized or unauthorized 
+use of the software.
+
+
+As a work of the United States Government, this USGS product is 
+in the public domain within the United States. You can copy, 
+modify, distribute, and perform the work, even for commercial 
+purposes, all without asking permission. Additionally, USGS 
+waives copyright and related rights in the work worldwide 
+through CC0 1.0 Universal Public Domain Dedication 
+(https://creativecommons.org/publicdomain/zero/1.0/).
+
+The following GNU Lesser General Public License (LGPL) libraries
+are used in this USGS product:
+
+    SPARSKIT version 2.0
+      ilut, luson, and qsplit 
+      (https://www-users.cse.umn.edu/~saad/software/SPARSKIT/)
+
+    RCM - Reverse Cuthill McKee Ordering
+      (https://people.math.sc.edu/Burkardt/f_src/rcm/rcm.html)
+
+    BLAS - Basic Linear Algebra Subprograms Level 1
+      (https://people.math.sc.edu/Burkardt/f_src/blas1_d/blas1_d.html)
+
+    SPARSEKIT - Sparse Matrix Utility Package
+      amux, dperm, dvperm, rperm, and cperm
+      (https://people.sc.fsu.edu/~jburkardt/f77_src/sparsekit/sparsekit.html)
+
+The following BSD-3 License libraries are used in this USGS product:
+
+    Modern Fortran DAG Library
+      Copyright (c) 2018, Jacob Williams
+      All rights reserved.
+      (https://github.com/jacobwilliams/daglib)
+
+MODFLOW 6 compiler options: /Isrc\libmf6core.a.p /Isrc /I..\src
+/Isrc\libmf6_external.a.p /MTd /nologo /warn:general /warn:truncated_source
+/stand:f08 /Zi /traceback /O2 /fpe:0 /heap-arrays:0 /traceback /fpp
+/Qdiag-disable:7416 /Qdiag-disable:7025 /Qdiag-disable:5268
+/Fdsrc\libmf6core.a.p\Utilities_compilerversion.F90.pdb
+/module:src\libmf6core.a.p
+/Fosrc/libmf6core.a.p/Utilities_compilerversion.F90.obj /c
+
+System command used to initiate simulation:
+"C:\Users\00098687\OneDrive - The University of Western Australia\loop_to_flopy\exe\mf6.exe"
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  SIZE IN BITS: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  SIZE IN BITS: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  SIZE IN BITS: 64
+
+Logical Variables
+  KIND: 4
+  SIZE IN BITS: 32
+ 
+ NAMEFILE OPTIONS:
+    NEWTON-RAPHSON method enabled for the model.
+    NEWTON-RAPHSON UNDER-RELAXATION based on the bottom elevation of the model will be applied to the model.
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END NAMEFILE OPTIONS:
+
+ DISU -- UNSTRUCTURED GRID DISCRETIZATION PACKAGE, VERSION 2 : 3/27/2014 - INPUT READ FROM MEMPATH: __INPUT__/REF/DISU                                
+
+
+ Setting Discretization Options
+    VERTICAL_OFFSET_TOLERANCE = .000000000000000
+ End Setting Discretization Options
+
+ Setting Discretization Dimensions
+    NODES = 12100
+    NJA = 140828
+    NVERT = 3633
+ End Setting Discretization Dimensions
+
+ Setting Discretization Griddata
+    TOP set from input file
+    BOT set from input file
+    AREA set from input file
+ End Setting Discretization Griddata
+
+ Setting Discretization Connectivity
+    IAC set from input file
+    JA set from input file
+    IHC set from input file
+    CL12 set from input file
+    HWVA set from input file
+    ANGLDEGX set from input file
+ End Setting Discretization Connectivity
+
+ Discretization Vertex data loaded
+ Discretization Cell2d data loaded
+
+ NPF -- NODE PROPERTY FLOW PACKAGE, VERSION 1, 3/30/2015 INPUT READ FROM MEMPATH: __INPUT__/REF/NPF                                 
+
+
+ IC -- Initial Conditions Package, Version 8, 3/28/2015 input read from mempath: __INPUT__/REF/IC                                  
+
+
+ Setting NPF Options
+    Cell-by-cell flow information will be saved to binary file whenever ICBCFL is not zero.
+    XT3D formulation is selected.
+    Specific discharge will be calculated at cell centers and written to DATA-SPDIS in budget file when requested.
+ End Setting NPF Options
+
+ Setting NPF Griddata
+    ICELLTYPE set from input file
+    K set from input file
+    K33 set from input file
+    K22 set from input file
+    ANGLE1 set from input file
+    ANGLE2 set from input file
+    ANGLE3 set from input file
+ End Setting NPF Griddata
+
+
+ WEL   -- WEL PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/REF/WEL_0                               
+
+ PROCESSING WEL BASE OPTIONS
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+    LISTS OF WEL CELLS WILL BE PRINTED.
+    WEL FLOWS WILL BE PRINTED TO LISTING FILE.
+ END OF WEL BASE OPTIONS
+
+ PROCESSING WEL OPTIONS
+ END OF WEL OPTIONS
+
+ PROCESSING WEL BASE DIMENSIONS
+    MAXBOUND =       8
+ END OF WEL BASE DIMENSIONS
+
+ RCH   -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/REF/RCH_0                               
+
+ PROCESSING RCH BASE OPTIONS
+ END OF RCH BASE OPTIONS
+
+ PROCESSING RCH OPTIONS
+ END OF RCH OPTIONS
+
+ PROCESSING RCH BASE DIMENSIONS
+    MAXBOUND =    1646
+ END OF RCH BASE DIMENSIONS
+
+ CHD   -- CHD PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/REF/CHD_0                               
+
+ PROCESSING CHD BASE OPTIONS
+ END OF CHD BASE OPTIONS
+
+ PROCESSING CHD BASE DIMENSIONS
+    MAXBOUND =     564
+ END OF CHD BASE DIMENSIONS
+    STRT set from input file
+
+ XT3D is active.
+
+
+
+ STO -- STORAGE PACKAGE, VERSION 1, 5/19/2014 INPUT READ FROM UNIT 1005
+
+
+ # File generated by Flopy version 3.4.1 on 09/08/2024 at 22:08:03.
+ PROCESSING STORAGE OPTIONS
+ END OF STORAGE OPTIONS
+ PROCESSING GRIDDATA
+
+                 ICONVERT = 1
+ END PROCESSING GRIDDATA
+
+The observation utility is active for "REF"
+ # File generated by Flopy version 3.4.1 on 09/08/2024 at 22:08:03.
+
+Processing observation options:
+
+The PRINT_INPUT option has been specified.
+
+
+ OBSERVATIONS READ FROM FILE "ref"
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ NAME                                     TYPE                                       TIME         LOCATION DATA                              OUTPUT FILENAME                                                                 
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ OB1_-25.0                                CONTINUOUS  HEAD                           ALL TIMES    "  249"                                    ref_future.csv                                                                  
+ OB1_-162.0                               CONTINUOUS  HEAD                           ALL TIMES    "  3479"                                   ref_future.csv                                                                  
+ OB1_-326.0                               CONTINUOUS  HEAD                           ALL TIMES    "  5929"                                   ref_future.csv                                                                  
+ OB2_-25.0                                CONTINUOUS  HEAD                           ALL TIMES    "  250"                                    ref_future.csv                                                                  
+ OB2_-50.0                                CONTINUOUS  HEAD                           ALL TIMES    "  1896"                                   ref_future.csv                                                                  
+ OB2_-101.0                               CONTINUOUS  HEAD                           ALL TIMES    "  5930"                                   ref_future.csv                                                                  
+ OB3_-25.0                                CONTINUOUS  HEAD                           ALL TIMES    "  251"                                    ref_future.csv                                                                  
+ OB3_-60.0                                CONTINUOUS  HEAD                           ALL TIMES    "  3480"                                   ref_future.csv                                                                  
+ OB3_-121.0                               CONTINUOUS  HEAD                           ALL TIMES    "  5931"                                   ref_future.csv                                                                  
+ OB4_-25.0                                CONTINUOUS  HEAD                           ALL TIMES    "  252"                                    ref_future.csv                                                                  
+ OB4_-99.0                                CONTINUOUS  HEAD                           ALL TIMES    "  3481"                                   ref_future.csv                                                                  
+ OB4_-199.0                               CONTINUOUS  HEAD                           ALL TIMES    "  5932"                                   ref_future.csv                                                                  
+ OB5_-25.0                                CONTINUOUS  HEAD                           ALL TIMES    "  253"                                    ref_future.csv                                                                  
+ OB5_-50.0                                CONTINUOUS  HEAD                           ALL TIMES    "  1899"                                   ref_future.csv                                                                  
+ OB5_-73.0                                CONTINUOUS  HEAD                           ALL TIMES    "  5933"                                   ref_future.csv                                                                  
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    BINARY GRID INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1017
+      FILE NAME: ref.disu.grb
+
+ OPENED ref.disu.grb
+ FILE TYPE:DATA(BINARY)   UNIT 1017   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+      THE LAST TIME STEP WILL BE PRINTED
+      THE LAST TIME STEP WILL BE PRINTED
+ # File generated by Flopy version 3.4.1 on 09/08/2024 at 22:08:03.
+
+ PROCESSING OC OPTIONS
+
+    BUDGET INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1018
+      FILE NAME: ref.bud
+
+ OPENED ref.bud
+ FILE TYPE:DATA(BINARY)   UNIT 1018   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    HEAD INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1019
+      FILE NAME: ref.hds
+
+ OPENED ref.hds
+ FILE TYPE:DATA(BINARY)   UNIT 1019   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+ END OF OC OPTIONS
+
+start timestep kper="1" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 1
+      THE LAST TIME STEP WILL BE SAVED
+      ALL TIME STEPS WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 1
+
+
+ STRESS PERIOD 1 IS TRANSIENT
+
+ ------------------
+  WEL NO.    NODE  
+ ------------------
+     1       5925  
+     2       7476  
+     3       5926  
+     4       7477  
+     5       5927  
+     6       7478  
+     7       5928  
+     8       7479  
+ ------------------
+
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP      1, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="2" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP      2, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="3" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP      3, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="4" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP      4, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="5" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP      5, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="6" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP      6, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="7" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP      7, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="8" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP      8, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="9" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP      9, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="10" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     10, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="11" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     11, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     11, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     11, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     11, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     11, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     11, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     11, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="12" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     12, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     12, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     12, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     12, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     12, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     12, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     12, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="13" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     13, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     13, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     13, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     13, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     13, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     13, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     13, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="14" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     14, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     14, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     14, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     14, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     14, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     14, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     14, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="15" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     15, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     15, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     15, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     15, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     15, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     15, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     15, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="16" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     16, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     16, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     16, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     16, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     16, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     16, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     16, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="17" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     17, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     17, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     17, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     17, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     17, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     17, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     17, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="18" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     18, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     18, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     18, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     18, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     18, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     18, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     18, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="19" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     19, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     19, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     19, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     19, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     19, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     19, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     19, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="20" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     20, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     20, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     20, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     20, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     20, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     20, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     20, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="21" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     21, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     21, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     21, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     21, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     21, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     21, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     21, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="22" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     22, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     22, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     22, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     22, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     22, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     22, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     22, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="23" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     23, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     23, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     23, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     23, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     23, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     23, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     23, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="24" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     24, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     24, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     24, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     24, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     24, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     24, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     24, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="25" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     25, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     25, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     25, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     25, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     25, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     25, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     25, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="26" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     26, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     26, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     26, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     26, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     26, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     26, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     26, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="27" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     27, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     27, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     27, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     27, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     27, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     27, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     27, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="28" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     28, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     28, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     28, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     28, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     28, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     28, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     28, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="29" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     29, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     29, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     29, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     29, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     29, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     29, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     29, STRESS PERIOD      1
+
+end timestep
+
+
+start timestep kper="1" kstp="30" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1018 AT TIME STEP     30, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1018 AT TIME STEP     30, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1018 AT TIME STEP     30, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL REF              PACKAGE NPF             CONNECTED TO MODEL REF              PACKAGE NPF              ON UNIT   1018 AT TIME STEP     30, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE WEL_0            ON UNIT   1018 AT TIME STEP     30, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE RCH_0            ON UNIT   1018 AT TIME STEP     30, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL REF              PACKAGE REF             CONNECTED TO MODEL REF              PACKAGE CHD_0            ON UNIT   1018 AT TIME STEP     30, STRESS PERIOD      1
+
+ WEL PACKAGE (WEL_0) FLOW RATES   PERIOD      1   STEP       30
+ -----------------------------------------------
+   NUMBER   CELLID                    RATE      
+ -----------------------------------------------
+     1      (5925)               -2500.0000     
+     2      (7476)               -2500.0000     
+     3      (5926)               -2500.0000     
+     4      (7477)               -2500.0000     
+     5      (5927)               -2500.0000     
+     6      (7478)               -2500.0000     
+     7      (5928)               -2500.0000     
+     8      (7479)               -2500.0000     
+ -----------------------------------------------
+
+
+
+
+ HEAD WILL BE SAVED ON UNIT 1019 AT END OF TIME STEP   30, STRESS PERIOD    1
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP   30, STRESS PERIOD   1
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =     2218255.2062                STO-SS =         456.9238     STORAGE                          
+              STO-SY =     6842772.3812                STO-SY =        2135.9187     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+                 RCH =    71398640.6110                   RCH =       39122.5428     RCH_0                            
+                 CHD =    34474727.5770                   CHD =       19782.5902     CHD_0                            
+
+            TOTAL IN =   114934395.7754              TOTAL IN =       61497.9755
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+              STO-SY =           0.0000                STO-SY =           0.0000     STORAGE                          
+                 WEL =    36500000.0000                   WEL =       20000.0000     WEL_0                            
+                 RCH =           0.0000                   RCH =           0.0000     RCH_0                            
+                 CHD =    78437101.7608                   CHD =       41500.0280     CHD_0                            
+
+           TOTAL OUT =   114937101.7608             TOTAL OUT =       61500.0280
+
+            IN - OUT =       -2705.9854              IN - OUT =          -2.0524
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP   30 IN STRESS PERIOD    1
+                          TIME STEP LENGTH =    175.995    
+                        STRESS PERIOD TIME =    1825.00    
+                     TOTAL SIMULATION TIME =    1825.00    
+
+end timestep
+
