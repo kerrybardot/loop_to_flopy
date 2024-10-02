@@ -86,6 +86,43 @@ def prepare_geomodel_loopshowcase(P, data, strat, include_fault):
     return(data, strat)
 
 
+def create_faultfunction():    
+    ## ADD FAULT (this chunk given to me directly by Lachlan Grose to make an ellipsoid fault)
+    from LoopStructural.modelling.features.fault._fault_function import CubicFunction, FaultDisplacement, Composite
+    hw = CubicFunction()
+    hw.add_cstr(0, 1)
+    hw.add_grad(0, 0)
+    hw.add_cstr(1, 0)
+    hw.add_grad(1, 0)
+    hw.add_max(1)
+    fw = CubicFunction()
+    fw.add_cstr(0, -1)
+    fw.add_grad(0, 0)
+    fw.add_cstr(-1, 0)
+    fw.add_grad(-1, 0)
+    fw.add_min(-1)
+    gyf = CubicFunction()
+    gyf.add_cstr(-1, 0)
+    gyf.add_cstr(1, 0)
+    gyf.add_cstr(-0.2, 1)
+    gyf.add_cstr(0.2, 1)
+    gyf.add_grad(0, 0)
+    gyf.add_min(-1)
+    gyf.add_max(1)
+    gzf = CubicFunction()
+    gzf.add_cstr(-1, 0)
+    gzf.add_cstr(1, 0)
+    gzf.add_cstr(-0.2, 1)
+    gzf.add_cstr(0.2, 1)
+    gzf.add_grad(0, 0)
+    gzf.add_min(-1)
+    gzf.add_max(1)
+    gxf = Composite(hw, fw)
+    fault_displacement = None
+    fault_displacement = FaultDisplacement(gx=gxf, gy=gyf, gz=gzf)
+    faultfunction = fault_displacement
+    return(faultfunction)
+    
 def create_geomodel_loopshowcase(P, include_fault):
     import numpy as np
     origin  = (P.x0, P.y0, P.z0)
@@ -101,6 +138,7 @@ def create_geomodel_loopshowcase(P, include_fault):
 
     if include_fault:
         print('Fault included!')
+
         faultfunction = create_faultfunction()
         Fault = geomodel.create_and_add_fault('Fault', 
                                               displacement      = P.fault_max_disp,
@@ -310,16 +348,4 @@ def param_vs_struct(param_obs_heads, pinchout_obs_heads, xlim = None, ylim = Non
     ax.legend(legend_markers, ['parameter variation', 'structural variation'], loc="center", fontsize = 9)#, ncols = 3, bbox_to_anchor=[0.5, 0.7])
     plt.tight_layout()
     plt.show()
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
