@@ -143,13 +143,13 @@ def create_geomodel_loopshowcase(P, include_fault):
         Fault = geomodel.create_and_add_fault('Fault', 
                                               displacement      = P.fault_max_disp,
                                               fault_center      = P.fault_center,
-                                              minor_axis        = P.minor_axis, # fault_influence
+                                              #minor_axis        = P.minor_axis, # fault_influence
                                               #fault_slip_vector = P.fault_slip_vector,
                                               #major_axis        = P.major_axis, # fault_extent
                                               #intermediate_axis = P.intermediate_axis, # fault_vertical_radius
                                               #fault_dip_anisotropy=0.0,
                                               #fault_trace_anisotropy=0.0,
-                                              #faultfunction     = faultfunction, #'BaseFault', 
+                                              faultfunction     = 'BaseFault', 
                                               #nelements=4000, 
                                               #steps=4, 
                                               #interpolatortype="FDI", 
